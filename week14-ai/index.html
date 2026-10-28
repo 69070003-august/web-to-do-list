@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile + To-do List</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, 'Noto Sans Thai', sans-serif;
+    background-color: #e8f5e9;
+    color: #1b4332;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    line-height: 1.6;
+  }
+  .card {
+    background-color: #ffffff;
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(27, 67, 50, 0.15);
+    border: 1px solid #c8e6c9;
+  }
+  .profile {
+    flex: 1;
+    background-color: #2d6a4f;
+    color: #ffffff;
+    padding: 36px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .profile img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  .profile h1 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+  .profile p {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #e9f5ec;
+  }
+  .profile .bio {
+    background-color: rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin: 12px 0 18px 0;
+    font-size: 0.93rem;
+  }
+  .profile a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #2d6a4f;
+    padding: 8px 18px;
+    margin: 4px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #b7e4c7;
+    transition: background-color 0.2s, transform 0.2s;
+  }
+  .profile a:hover {
+    background-color: #d8f3dc;
+  }
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .todo {
+    flex: 1.2;
+    padding: 36px 32px;
+    background-color: #ffffff;
+  }
+  .todo h2 {
+    font-size: 1.6rem;
+    color: #2d6a4f;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #95d5b2;
+  }
+  .todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  #todo-input {
+    flex: 1;
+    padding: 11px 14px;
+    border: 2px solid #b7e4c7;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    background-color: #f6fbf7;
+    color: #1b4332;
+  }
+  #todo-input:focus {
+    border-color: #2d6a4f;
+    background-color: #ffffff;
+  }
+  #todo-input::placeholder {
+    color: #8aaa97;
+  }
+  #add-btn {
+    background-color: #2d6a4f;
+    color: #fff;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  #add-btn:hover {
+    background-color: #40916c;
+  }
+  #todo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #todo-list li {
+    background-color: #f0faf4;
+    border: 1px solid #c8e6c9;
+    border-left: 6px solid #52b788;
+    padding: 11px 12px 11px 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.98rem;
+  }
+  #todo-list li button {
+    background-color: #ffffff;
+    color: #c1121f;
+    border: 1.5px solid #e9a8a8;
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  #todo-list li button:hover {
+    background-color: #c1121f;
+    color: #fff;
+    border-color: #c1121f;
+  }
+  @media (max-width: 700px) {
+    .card {
+      flex-direction: column;
+    }
+    .profile, .todo {
+      padding: 28px 22px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="profile">
+        <img src="S__35995653.jpg" alt="รูปโปรไฟล์นักศึกษา">
+        <h1>Krittin Benjachart</h1>
+        <p>รหัสนักศึกษา: 69070003<br>สาขา: เทคโนโลยีสารสนเทศ</p>
+        <p class="bio">สวัสดีครับ ผมเป็นนักศึกษาที่สนใจด้านการพัฒนาเว็บไซต์และ AI ชอบเรียนรู้เทคโนโลยีใหม่ ๆ อยู่เสมอ</p>
+        <div class="contact">
+            <a href="https://www.instagram.com/august_ks.x/">Instagram</a>
+            <a href="69070003@kmitl.ac.th">Email</a>
+        </div>
+    </div>
+
+    <div class="todo">
+        <h2>To-do List</h2>
+        <div class="todo-form">
+            <input id="todo-input" type="text" placeholder="พิมพ์สิ่งที่ต้องทำ...">
+            <button id="add-btn">เพิ่ม</button>
+        </div>
+        <ul id="todo-list">
+        </ul>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
